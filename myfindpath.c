@@ -8,7 +8,7 @@
 char *findpath(void)
 {
 	int i = 0;
-	char *path_val = _getenv("PATH");
+	char *path_str = _getenv("PATH");
 	char **path_dir, *abs_path;
 
 	if (_strncmp(command[0], "./", 2) == 0 ||
@@ -19,10 +19,10 @@ char *findpath(void)
 			return (_strdup(command[0]));
 	}
 
-	if (!path_val)
+	if (!path_str)
 		return (NULL);
 
-	path_dir = strarr(path_val, ':');
+	path_dir = strarr(path_str, ':');
 
 	for (i = 0; path_dir[i]; i++)
 	{
