@@ -6,7 +6,7 @@
  *
  * Return: void
  */
-void free_arr(char **arr)
+void free_array(char **arr)
 {
 	int i;
 
