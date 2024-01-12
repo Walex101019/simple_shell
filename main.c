@@ -1,4 +1,4 @@
-#include "shell.c"
+#include "shell.h"
 /*
  * main - Entry point
  *
@@ -6,23 +6,17 @@
  */
 int main(void)
 {
-	char command[MAX_COMMAND_LENGTH];
+	char input[MAX_INPUT_SIZE];
 
 	while (1)
 	{
 		display_prompt();
-		if (fgets(command, sizeof(command), stdin) == NULL)
+		if (fgets(input, sizeof(input), stdin) == NULL)
 		{
-			printf("\nExiting simple_shell.\n");
+			printf("\n");
 			break;
 		}
-		size_t command_length = strlen(command);
-
-		if (command_length > 0 && command[command_length - 1] == '\n')
-		{
-			command[command_length - 1] = '\0';
-		}
-		execute_command(command);
+		input[strcspn(input, "\n")] = '\0':
 	}
 	return (0);
 }
