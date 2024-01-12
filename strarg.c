@@ -1,13 +1,13 @@
 #include "shell.h"
 
 /**
- * strtoarr - converts a string to an array based on a delimiter
+ * strarr - converts a string to an array based on a delimiter
  * @str: the string to be converted to an array
  * @delim: the delimiter used to break string
  *
  * Return: array of the tokenized string, else NULl if not converted
  */
-char **strtoarr(char *str, char delim)
+char **strarr(char *str, char delim)
 {
 	int i = 0, j = 0, k = 0;
 	int str_len = _strlen(str);

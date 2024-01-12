@@ -14,7 +14,7 @@ char *findpath(void)
 	if (_strncmp(command[0], "./", 2) == 0 || command[0][0] == '/' || _strncmp(command[0], "../", 3))
 	{
 		if (access(command[0], F_OK) == 0)
-			return _strdup(command[0]);
+			return (_strdup(command[0]));
 	}
 
 	if (!path_val)
@@ -31,12 +31,12 @@ char *findpath(void)
 
 		if (access(abs_path, F_OK) == 0)
 		{
-			free_array(path_dir);
+			free_arr(path_dir);
 			return (abs_path);
 		}
 		free(abs_path);
 	}
-	free_array(path_dir);
+	free_arr(path_dir);
 
 	return (NULL);
 }

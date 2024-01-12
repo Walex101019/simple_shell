@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * exit_stat - exits the shell with a status
+ * exits - exits the shell with a status
  * @exit_status: the exit status
  *
  * Return: exits the shell and other cases return 2
@@ -11,7 +11,7 @@ int exits(char *exit_status)
 	if (!exit_status)
 	{
 		free(line);
-		free_array(command);
+		free_arr(command);
 		exit(status);
 	}
 
@@ -20,7 +20,7 @@ int exits(char *exit_status)
 	if (status >= 0)
 	{
 		free(line);
-		free_array(command);
+		free_arr(command);
 		exit(status);
 	}
 
