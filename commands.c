@@ -6,6 +6,7 @@
 void execute_command(const char *command)
 {
 	pid_t pid = fork();
+
 	if (pid == -1)
 	{
 		perror("fork");
@@ -19,17 +20,18 @@ void execute_command(const char *command)
 	else
 	{
 		int status;
+
 		waitpid(pid, &status, 0);
 		if (WIFEXITED(status))
 		{
 			if (WEXITSTATUS(status) != 0)
 			{
-				fprintf(stderr, "Error: Command '%s' failed with exit code %d\n", command, WEXITSTATUS(status));
+				fprintf(stderr, "Error: Command '%s' f%d\n", command, WEXITSTATUS(status));
 			}
 		}
 		else
 		{
-			fprintf(stderr, "Error: Command '%s' did not terminate successfully\n", command);
+			fprintf(stderr, "Error: Command '%s' did not terminate\n", command);
 		}
 	}
 }
