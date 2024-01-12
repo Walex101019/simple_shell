@@ -20,7 +20,7 @@ char *findpath(void)
 	if (!path_val)
 		return (NULL);
 
-	path_dir = strtoarr(path_val, ':');
+	path_dir = strarr(path_val, ':');
 
 	for (i = 0; path_dir[i]; i++)
 	{

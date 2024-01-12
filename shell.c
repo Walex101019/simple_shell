@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 	{
 		display_prompt("#cisfun$ ");
 
-		_getline(&line);
+		_mygetline(&line);
 
 		command = strarr(line, ' ');
 

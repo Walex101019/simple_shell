@@ -11,7 +11,7 @@ int handle_builtin(void)
 		return (0);
 	if (!_strcmp(command[0], "exit"))
 	{
-		status = exit_stat(command[1]);
+		status = exits(command[1]);
 		return (0);
 	}
 

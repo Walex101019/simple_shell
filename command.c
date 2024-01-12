@@ -8,7 +8,7 @@
 int execute_command(void)
 {
 	char *command_path;
-	pid_t cpid;
+	pid_t pid;
 	int exit_status;
 
 	if (command[0] && handle_builtin())
@@ -16,10 +16,10 @@ int execute_command(void)
 		command_path = findpath();
 		if (command_path)
 		{
-			cpid = fork();
-			if (cpid == -1)
+			pid = fork();
+			if (pid == -1)
 				return (0);
-			else if (cpid == 0)
+			else if (pid == 0)
 			{
 				execve(command_path, command, environ);
 				perror("execve");
@@ -27,7 +27,7 @@ int execute_command(void)
 			}
 			else
 			{
-				waitpid(cpid, &exit_status, 0);
+				waitpid(pid, &exit_status, 0);
 				if (WIFEXITED(exit_status))
 					status = WEXITSTATUS(exit_status);
 			}

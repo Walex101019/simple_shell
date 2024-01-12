@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * _getline - gets string from statndard input and stores in a buffer
+ * _mygetline - gets string from statndard input and stores in a buffer
  * @line: buffer for the string to be stored
  *
  * Return: number of characters read, if errror returns -1;
  */
-ssize_t _getline(char **line)
+ssize_t _mygetline(char **line)
 {
 	char *buf = _calloc(8096, sizeof(char));
 	ssize_t n = 0;

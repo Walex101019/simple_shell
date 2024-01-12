@@ -29,7 +29,7 @@ char **strarr(char *str, char delim);
 int display_prompt(char *prompt);
 ssize_t _mygetline(char **line);
 ssize_t _getchar(char c);
-int exit_stat(char *exit_status);
+int exits(char *exit_status);
 int _atoi(const char *str);
 char *_strcat(char *dest, char *src);
 char *_strcpy(char *dest, char *src);
@@ -37,7 +37,7 @@ char *_strdup(char *str);
 int _strcmp(char *s1, char *s2);
 int _strlen(char *s);
 int _strncmp(const char *str1, const char *str2, size_t n);
-void *_calloc(unsigned int nmemb, unsigned int size);
+void *_calloc(unsigned int narry, unsigned int size);
 
 extern char **environ;
 int status;

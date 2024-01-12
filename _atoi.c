@@ -9,12 +9,12 @@
 int _atoi(const char *str)
 {
 	int result = 0;
-	int sign = 1;
+	int mark = 1;
 	int i = 0;
 
 	if (str[0] == '-')
 	{
-		sign = -1;
+		mark = -1;
 		i++;
 	}
 
@@ -27,5 +27,5 @@ int _atoi(const char *str)
 		i++;
 	}
 
-	return (sign * result);
+	return (mark * result);
 }

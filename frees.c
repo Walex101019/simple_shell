@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * free_array - a function that frees the memmory allocated to an array
+ * free_arr - a function that frees the memmory allocated to an array
  * @arr: the array to be freed
  *
  * Return: void
  */
-void free_array(char **arr)
+void free_arr(char **arr)
 {
 	int i;
 
